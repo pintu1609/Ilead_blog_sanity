@@ -9,14 +9,25 @@ export default {
         type: 'string',
       },
       {
-        name: 'description',
-        title: 'Description',
-        type: 'text',
+        name: 'abstract',
+        title: 'Abstract',
+        type: 'string',
       },
       {
         name: 'author',
         title: 'Author',
         type: 'string',
+      },
+      {
+        name: 'authorImage',
+        title: 'Author Image',
+        type: 'image',
+        options: { hotspot: true },
+      },
+      {
+        name:'authordetails',
+        title:'Author Details',
+        type:'string'
       },
       {
         name: 'date',
@@ -29,6 +40,18 @@ export default {
         type: 'image',
         options: { hotspot: true },
       },
+      {
+        name: 'description',
+        title: 'Description',
+        type: 'array',
+        of: [{ type: 'block' }], // ✅ Array of rich text blocks
+      },
+      {
+        name: "slug",
+        title: "Slug",
+        type: "slug",
+        options: { source: "title", maxLength: 96 }
+      }
     ],
   };
   
