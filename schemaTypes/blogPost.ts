@@ -14,6 +14,12 @@ export default {
         type: 'string',
       },
       {
+        name: 'subtype',
+        title: 'Subtype',
+        type: 'string',
+        optional: true, // ✅ Optional field
+      },
+      {
         name: 'abstract',
         title: 'Abstract',
         type: 'string',
@@ -41,9 +47,9 @@ export default {
       },
       {
         name: 'mainImage',
-        title: 'Main Image',
-        type: 'image',
-        options: { hotspot: true },
+        title: 'Main Images',
+        type: 'array',
+        of: [{ type: 'image', options: { hotspot: true } }],
       },
       {
         name: 'description',
