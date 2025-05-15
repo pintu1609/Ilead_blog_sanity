@@ -19,7 +19,7 @@ export default {
       validation: (rule: Rule) => rule.required()
     },
     {
-      name: 'img',
+      name: 'image',
       title: 'Image',
       type: 'image',
       options: {
@@ -41,7 +41,7 @@ export default {
       validation: (rule: Rule) => rule.required()
     },
     {
-      name: 'descFull',
+      name: 'longText',
       title: 'Full Description',
       type: 'text',
       rows: 5,
@@ -57,7 +57,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      media: 'img'
+      media: 'image'
     }
   }
 };
