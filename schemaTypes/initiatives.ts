@@ -8,6 +8,11 @@ export default {
   type: 'document',
   fields: [
     {
+      name:"id",
+      title: 'ID',
+      type: 'number'
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -30,7 +35,7 @@ export default {
       validation: (rule: Rule) => rule.required()
     },
     {
-      name: 'descShort',
+      name: 'shortText',
       title: 'Short Description',
       type: 'string',
       validation: (rule: Rule) => rule.required()
