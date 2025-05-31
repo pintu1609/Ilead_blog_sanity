@@ -3,8 +3,8 @@ import { Rule } from 'sanity'
 
 
 export default {
-  name: 'initiative',
-  title: 'Initiative',
+  name: 'leader',
+  title: 'Leader',
   type: 'document',
   fields: [
     {
@@ -13,8 +13,8 @@ export default {
       type: 'number'
     },
     {
-      name: 'title',
-      title: 'Title',
+      name: 'name',
+      title: 'Name',
       type: 'string',
       validation: (rule: Rule) => rule.required()
     },
@@ -35,35 +35,38 @@ export default {
       validation: (rule: Rule) => rule.required()
     },
     {
-      name: 'shortText',
-      title: 'Short Description',
+      name: 'role',
+      title: 'Role',
       type: 'string',
       validation: (rule: Rule) => rule.required()
     },
     {
-      name: 'longText',
-      title: 'Full Description',
-      type: 'text',
-      rows: 5,
-      validation: (rule: Rule) => rule.required()
-    },
-    {
-      name: 'additionalText',
-      title: 'Additional Text',
-      type: 'text',
-      rows: 5
-      
-    },
+  name: 'type',
+  title: 'Type',
+  type: 'string',
+  options: {
+    list: [
+      { title: 'Trusters', value: 'trustees' },
+      { title: 'Board of Directors', value: 'boardofdirectors' },
+      { title: 'International Advisory Board', value: 'internationaladvisoryboard' },
+      { title: 'Academic Team', value: 'academicteam' },
+      { title: 'Partners', value: 'partners' },
+      { title: 'Alumni Network', value: 'alumninetwork' },
+    ],
+    layout: 'dropdown' // optional: can be 'radio' or 'dropdown'
+  },
+  validation: (rule: Rule) => rule.required()
+},
     {
         name: "slug",
         title: "Slug",
         type: "slug",
-        options: { source: "title", maxLength: 96 }
+        options: { source: "name", maxLength: 96 }
       }
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'name',
       media: 'image'
     }
   }
